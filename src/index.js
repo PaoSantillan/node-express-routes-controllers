@@ -17,7 +17,14 @@ const saveFile = () => file = fs.writeFileSync(process.env.DB, JSON.stringify(fi
 app.use(bodyParser.json({}));
 app.use(bodyParser.urlencoded({}))
 
-// routes
+//Routes
+
+/*La ruta es el punto de entrada de un usuario a nuestra aplicación, en otras palabras, 
+son la primera etapa en la que debemos trabajar para decidir qué hacer con cada petición
+que reciba nuestra página o aplicación. Por lo general las rutas apuntan a un controlador 
+(segunda etapa) y luego el controlador interactúa con los modelos, 
+u otras clases y servicios para finalmente generar una respuesta que se enviará al usuario (HTML, JSON, etc.)*/
+
 app.use('/api/users', require('./routes/user'));
 
 /*app.get('/', (req, res) =>{
